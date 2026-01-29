@@ -3,14 +3,18 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 
 export default defineConfig({
-  base: "./",   // ✅ Correct for Netlify
+  base: "./",   // ✅ FIX for Netlify
+
   build: {
-    outDir: "docs",
+    outDir: "dist",
   },
+
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
   },
+
   plugins: [react()],
 });
+
